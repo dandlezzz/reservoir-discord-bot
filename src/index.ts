@@ -15,8 +15,9 @@ import constants from "./utils/constants";
     const TRACKED_CONTRACTS: string[] | undefined = constants.TRACKED_CONTRACTS;
     const CHANNEL_IDS: object | undefined = constants.CHANNEL_IDS;
     const APPLICATION_ID: string | undefined = constants.APPLICATION_ID;
-    const REDIS_PORT: number | undefined = constants.REDIS_PORT;
+    const REDIS_PORT: string | undefined = constants.REDIS_PORT;
     const REDIS_HOST: string | undefined = constants.REDIS_HOST;
+    const MARKET_DOMAIN: string | undefined = constants.MARKET_DOMAIN;
 
     if (
       !TOKEN ||
@@ -38,7 +39,7 @@ import constants from "./utils/constants";
 
     const params = {
       host: REDIS_HOST,
-      port: REDIS_PORT,
+      port: parseInt(REDIS_PORT, 10),
     };
 
     waitPort(params).then(async ({ open, ipVersion }) => {
