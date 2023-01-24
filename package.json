@@ -6,7 +6,10 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node ./src/index.ts",
-    "start": "npm run build && node dist/index.js"
+    "start": "node dist/index.js",
+    "postinstall": "tsc",
+    "watch-node": "nodemon dist/index.js",
+    "watch-ts": "tsc -w"
   },
   "author": "Jaden Durnford",
   "license": "ISC",
