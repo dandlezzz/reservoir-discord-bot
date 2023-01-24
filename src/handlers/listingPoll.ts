@@ -157,7 +157,7 @@ export async function listingPoll(
         .setTitle(`${tokenDetails.name?.trim()} has been listed!`)
         .setAuthor({
           name: `${tokenDetails.collection.name}`,
-          url: `https://forgotten.market/${tokenDetails.contract}`,
+          url: `https://${constants.MARKET_DOMAIN}/${tokenDetails.contract}`,
           iconURL: `attachment://${authorIcon.name}`,
         })
         .setDescription(
@@ -177,7 +177,7 @@ export async function listingPoll(
           .setLabel("Purchase")
           .setStyle(5)
           .setURL(
-            `https://forgotten.market/${tokenDetails.contract}/${tokenDetails.tokenId}`
+            `https://${constants.MARKET_DOMAIN}/${tokenDetails.contract}/${tokenDetails.tokenId}`
           )
       );
       channel.send({
