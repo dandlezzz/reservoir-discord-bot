@@ -14,7 +14,7 @@ services:
   # Container: discord bot
   bot:
     container_name: reservoir-discord-bot
-    build: .
+    image: dandlezzz/finibot
     depends_on:
       - redis
     links:
